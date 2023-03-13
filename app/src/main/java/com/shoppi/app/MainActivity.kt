@@ -4,36 +4,24 @@ import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_product_detail)
-        Log.d("abc", "onCreate")
+        setContentView(R.layout.activity_main)
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navigation_main)
+        bottomNavigationView.itemIconTintList = null
+
+
+        val navController = supportFragmentManager.findFragmentById(R.id.container_main)?.
+                            findNavController()
+        navController?.let {
+            bottomNavigationView.setupWithNavController(it)
+        }
     }
 
-    override fun onRestart() {
-        super.onRestart()
-        Log.d("abc", "onRestart")
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d("abc", "onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("abc", "onResume")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("abc", "onStop")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("abc", "onDestroy")
-    }
 }
