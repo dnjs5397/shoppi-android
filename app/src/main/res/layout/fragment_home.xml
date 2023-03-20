@@ -20,27 +20,27 @@
 
 
             <TextView
-                android:id="@+id/mainTitle"
-                android:layout_width="wrap_content"
+                android:id="@+id/toolbar_home_title"
+                style="@style/TextHeadLine5.Black02.Bold"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="72dp"
+                android:maxLines="2"
                 android:paddingStart="16dp"
                 android:paddingTop="32dp"
+                android:paddingEnd="16dp"
                 android:paddingBottom="24dp"
-                android:textColor="@color/shoppi_black_02"
-                android:textSize="24sp"
-                android:textStyle="bold"
                 tools:text="IVY님, 이런 상품\n어때요?" />
 
             <ImageView
-                android:scaleType="centerCrop"
-                android:id="@+id/imageView"
+                android:id="@+id/toolbar_home_icon"
                 android:layout_width="68dp"
                 android:layout_height="68dp"
                 android:layout_gravity="end"
                 android:layout_marginTop="32dp"
                 android:layout_marginRight="4dp"
-                tools:src="@drawable/img_logo_home"
-                android:contentDescription="메인 아이콘" />
+                android:contentDescription="메인 아이콘"
+                android:scaleType="centerCrop" />
 
 
         </androidx.appcompat.widget.Toolbar>
@@ -56,11 +56,5 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <Button
-        android:id="@+id/btn_product_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="상품 상세 화면" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
